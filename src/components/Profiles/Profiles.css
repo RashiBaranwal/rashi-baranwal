@@ -1,0 +1,123 @@
+#profiles .profiles__group{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+#profiles .profile{
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius-3);
+    color: var(--color-text);
+    padding: 40px 25px;
+    isolation: isolate;
+    cursor: pointer;
+}
+
+#profiles .profile::before,#profiles .profile::after{
+    content: "";
+    position: absolute;
+}
+
+#profiles .profile::before{
+    width: 200%;
+    height: 200%;
+    background-image: conic-gradient(
+        var(--color-primary),
+        transparent 60deg,
+        transparent 180deg,
+        var(--color-primary),
+        transparent 240deg
+    );
+    inset: -50%;
+    z-index: -2;
+    animation: spin 9s linear infinite;
+    animation-play-state: paused;
+}
+
+@keyframes spin {
+    to{
+        transform: rotate(-360deg);
+    }
+}
+
+#profiles .profile:hover::before{
+    animation-play-state: running;
+}
+
+#profiles .profile::after{
+    background: var(--color-ui-2);
+    inset: 0.25rem;
+    border-radius: calc(1.2rem- 0.25rem);
+    z-index: -1;
+    transition: relative;
+}
+
+#profiles .profile .profile__top{
+    display: flex;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#profiles .icon__container{
+    width: 80px;
+    background: var(--color-ui-2);
+    border: solid 1px var(--color-primary);
+    margin-right: 8px;
+}
+
+#profiles .profile .icon{
+    font-size: 40px;
+    color: var(--color-primary);
+}
+
+#profiles .profile title{
+    font-size: 25px;
+    background: linear-gradient(to right,var(--color-primary) 0%,var(--color-white) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+#profiles .profile .description{
+    text-align: center;
+    font-size: 16px;
+    line-height: 25px;
+    transition: var(--transition);
+}
+
+#profiles .profile:hover .description{
+    color: var(--color-text);
+}
+
+#profiles .profile .profile__buttom{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+
+#profiles .profile .btn.btn__primary{
+    background: linear-gradient(260deg , var(-color-secondary) 0%,var(--color-primary) 100%);
+    background-size: 200% auto;
+    margin-top: 15px;
+    margin-bottom: 0px;
+    align-items: center;
+}
+#profiles .profile .btn.btn__primary:hover{
+    background-position: right center !important;
+}
+
+@media (max-width:1000px) {
+    #profiles .profiles__group{
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    #profiles .profile__top{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
