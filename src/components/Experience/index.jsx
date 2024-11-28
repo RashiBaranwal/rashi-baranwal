@@ -29,7 +29,7 @@ const Experience = () => {
               </p>
             </div>
             <div className="box">
-              <h4>Vidya Devi Jindal School (Higher Secondary Education)</h4>
+              <h4>Vidya Devi Jindal School, Hisar, Haryana (Higher Secondary Education)</h4>
               <h3>Apr 2020 - Jun 2022</h3>
               <p>
                 Grade : 94% <br />
@@ -45,7 +45,7 @@ const Experience = () => {
               </p>
             </div>
             <div className="box">
-              <h4>ST THOMAS SCHOOL (Primary Education)</h4>
+              <h4>ST THOMAS SCHOOL, Bhadohi, UP (Primary Education)</h4>
               <h3>Apr 2008 - Apr 2020</h3>
               <p>
                 Grade : 94.4% <br />
